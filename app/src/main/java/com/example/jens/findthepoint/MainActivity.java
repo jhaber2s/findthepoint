@@ -19,30 +19,24 @@ public class MainActivity extends AppCompatActivity {
         final Button connbtn = findViewById(R.id.btnVerbinden);
         final Button farbe = findViewById(R.id.btnFarbeanzeigen);
         final TextView anzeige = findViewById(R.id.textView);
+        final Button algostartbtn = findViewById(R.id.btnalgostart);
 
+
+        algostartbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
 
 
 
         farbe.setOnClickListener(new View.OnClickListener() {
 
-
-            int farbe = 0;
             public void onClick(View v) {
 
-
-                    conn.sendMessage(4);
-
-
-                    farbe = conn.readMessage();
-
-                    anzeige.setText(Integer.toString(farbe));
-
-
-
-
-
-
+                farbeanzeigen(anzeige);
 
             }
         });
@@ -59,7 +53,46 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+
     }
+
+    public void farbeanzeigen(TextView anzeige){
+        int farbe = 0;
+
+
+
+
+
+
+            conn.sendMessage(5);
+
+
+                farbe = conn.readMessage();
+
+                if (farbe >= 43 && farbe <= 45) {
+                    anzeige.setText("Blau/Boden");
+
+                }
+                if (farbe >= 48 && farbe <= 49) {
+                    anzeige.setText("Rot");
+
+                }
+                if (farbe >= 54) {
+                    anzeige.setText("Gruen");
+
+                }
+
+
+
+
+
+    }
+
+
+
+
 
 }
 
