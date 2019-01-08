@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
             conn.sendMessage(5);
 
-
+            
                 farbe = conn.readMessage();
 
                 if (farbe >= 43 && farbe <= 45) {
