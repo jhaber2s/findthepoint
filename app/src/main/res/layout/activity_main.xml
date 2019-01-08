@@ -9,13 +9,13 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="15dp"
+        android:layout_height="0dp"
         android:layout_marginStart="154dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="152dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="354dp"
         android:text="verbindung ?"
-        app:layout_constraintBottom_toTopOf="@+id/btnVerbinden"
+        app:layout_constraintBottom_toTopOf="@+id/find"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,7 +27,6 @@
         android:layout_marginStart="147dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="149dp"
-        android:layout_marginBottom="39dp"
         android:text="@string/verbinden"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,5 +63,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnFarbeanzeigen" />
+
+    <Button
+        android:id="@+id/find"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:onClick="findPoint"
+        android:text="Find"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnalgostart"
+        app:layout_constraintStart_toStartOf="@+id/btnalgostart"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </android.support.constraint.ConstraintLayout>
