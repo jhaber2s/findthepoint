@@ -1,7 +1,6 @@
 package com.example.jens.findthepoint;
 
 
-
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
@@ -39,7 +38,6 @@ public class Connector {
                     Log.d(Connector.TAG, "Bluetooth turned on");
 
             }
-
         }
         // Check if bluetooth is enabled
         else if (state == Connector.BT_OFF) {
@@ -50,9 +48,7 @@ public class Connector {
                     Log.d(Connector.TAG, "Bluetooth turned off");
 
             }
-
         }
-
     }
 
     public boolean connect() {
@@ -115,5 +111,4 @@ public class Connector {
 
         }
     }
-
 }

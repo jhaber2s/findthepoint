@@ -161,9 +161,9 @@ public class FindActivity extends AppCompatActivity {
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
 
-    Runnable finding = new Runnable(){
-        public void run(){
-            while (true){
+    Runnable finding = new Runnable() {
+        public void run() {
+            while (true) {
 
             }
         }

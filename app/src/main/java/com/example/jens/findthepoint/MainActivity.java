@@ -24,16 +24,13 @@ public class MainActivity extends AppCompatActivity {
         final TextView anzeige = findViewById(R.id.textView);
         final Button algostartbtn = findViewById(R.id.btnalgostart);
 
-
+        //Brauchen wir das ????
         algostartbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
-
-
-
 
         farbe.setOnClickListener(new View.OnClickListener() {
 
@@ -44,72 +41,60 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
         connbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(conn.connect()){
+                if (conn.connect()) {
 
                     anzeige.setText("Verbunden");
                 }
             }
         });
-
-
-
-
     }
 
-    public void farbeanzeigen(TextView anzeige){
+    public void farbeanzeigen(TextView anzeige) {
         int farbe = 0;
 
+        conn.sendMessage(5);
 
+        farbe = conn.readMessage();
 
+        if (farbe >= 43 && farbe <= 45) {
+            anzeige.setText("Blau/Boden");
 
+        }
+        if (farbe >= 48 && farbe <= 49) {
+            anzeige.setText("Rot");
 
+        }
+        if (farbe >= 54) {
+            anzeige.setText("Gruen");
 
-            conn.sendMessage(5);
-
-
-                farbe = conn.readMessage();
-
-                if (farbe >= 43 && farbe <= 45) {
-                    anzeige.setText("Blau/Boden");
-
-                }
-                if (farbe >= 48 && farbe <= 49) {
-                    anzeige.setText("Rot");
-
-                }
-                if (farbe >= 54) {
-                    anzeige.setText("Gruen");
-
-                }
-
-
-
-
+        }
 
     }
 
-    public void findPoint(View view){
+    //wieso nicht über onclick?
+    public void findPoint(View view) {
         Thread FindingThread = new Thread(finding);
         FindingThread.start();
     }
 
-    Runnable finding = new Runnable(){
+    Runnable finding = new Runnable() {
         int status;
-        public void run(){
+
+        public void run() {
             conn.sendMessage(100);
-            while (true){
+            while (true) {
                 status = conn.readMessage();
-                switch(status){
+                switch (status) {
                     /** found green point and finished **/
-                    case 1: finished();
+                    case 1:
+                        finished();
                         break;
                     /** found red line and change direction **/
-                    case 50: changeDirection();
+                    case 50:
+                        changeDirection();
                         break;
                     default:
                         break;
@@ -118,12 +103,12 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    public void finished(){
+    public void finished() {
         Intent found = new Intent(this, FindActivity.class);
         startActivity(found);
     }
 
-    public void changeDirection(){
+    public void changeDirection() {
         /**
          * 60	changeDirectionRight90
          * 61	changeDirectionRight75
@@ -139,10 +124,9 @@ public class MainActivity extends AppCompatActivity {
          * 71	changeDirectionLeft15
          */
         Random rnd = new Random();
-        int random = rnd.nextInt((72-60) + 60);
+        int random = rnd.nextInt((72 - 60) + 60);
         conn.sendMessage(random);
     }
-
 }
 
 
