@@ -127,6 +127,11 @@ public class MainActivity extends AppCompatActivity {
         int random = rnd.nextInt((72 - 60) + 60);
         conn.sendMessage(random);
     }
+
+    public void showSensors(View view) {
+        Intent Sensoren = new Intent(this,ShowSensors.class);
+        startActivity(Sensoren);
+    }
 }
 
 
