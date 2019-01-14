@@ -1,6 +1,7 @@
 package com.example.jens.findthepoint;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -168,5 +169,9 @@ public class FindActivity extends AppCompatActivity {
             }
         }
     };
+    public void goToMain(View view) {
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+    }
 
 }

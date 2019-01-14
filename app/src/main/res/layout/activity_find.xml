@@ -46,21 +46,20 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/dummy_button" />
+                android:onClick="goToMain"
+                android:text="zurück" />
 
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/editText"
+        <TextView
+            android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="69dp"
-            android:layout_marginTop="54dp"
-            android:ems="10"
-            android:inputType="textPersonName"
             android:text="Found"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="70sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="94dp"
+            tools:layout_editor_absoluteY="108dp" />
 
     </android.support.constraint.ConstraintLayout>
 
