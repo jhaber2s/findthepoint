@@ -22,15 +22,10 @@ public class MainActivity extends AppCompatActivity {
         final Button connbtn = findViewById(R.id.btnVerbinden);
         final Button farbe = findViewById(R.id.btnFarbeanzeigen);
         final TextView anzeige = findViewById(R.id.textView);
-        final Button algostartbtn = findViewById(R.id.btnalgostart);
 
 
-        algostartbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
+
 
 
 
@@ -109,7 +104,10 @@ public class MainActivity extends AppCompatActivity {
                     case 1: finished();
                         break;
                     /** found red line and change direction **/
-                    case 50: changeDirection();
+                    case 50:{
+                        changeDirection();
+                        run();
+                    }
                         break;
                     default:
                         break;
@@ -139,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
          * 71	changeDirectionLeft15
          */
         Random rnd = new Random();
-        int random = rnd.nextInt((72-60) + 60);
+        int random = rnd.nextInt(72-60) + 60;
         conn.sendMessage(random);
     }
 
