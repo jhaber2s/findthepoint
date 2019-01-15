@@ -10,27 +10,23 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginStart="154dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="152dp"
-        android:layout_marginBottom="354dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="25dp"
         android:text="verbindung ?"
-        app:layout_constraintBottom_toTopOf="@+id/find"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnVerbinden"
+        app:layout_constraintStart_toStartOf="@+id/btnVerbinden"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnVerbinden"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="147dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="149dp"
-        android:text="@string/verbinden"
+        android:layout_marginBottom="12dp"
 
+        android:text="@string/verbinden"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -38,51 +34,44 @@
         android:id="@+id/btnFarbeanzeigen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="147dp"
-        android:layout_marginTop="41dp"
-        android:layout_marginEnd="149dp"
-        android:layout_marginBottom="278dp"
+        android:layout_marginBottom="14dp"
         android:text="Farbeanzeigen"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnalgostart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.653"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnVerbinden"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <Button
         android:id="@+id/btnalgostart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="46dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginBottom="184dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="8dp"
         android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/find"
+        app:layout_constraintEnd_toEndOf="@+id/btnFarbeanzeigen"
         app:layout_constraintTop_toBottomOf="@+id/btnFarbeanzeigen" />
 
     <Button
         android:id="@+id/find"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="160dp"
         android:onClick="findPoint"
         android:text="Find"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btnalgostart"
         app:layout_constraintStart_toStartOf="@+id/btnalgostart"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/btnalgostart" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
         android:onClick="showSensors"
         android:text="Sensoren"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="119dp" />
+        app:layout_constraintBottom_toTopOf="@+id/btnFarbeanzeigen"
+        app:layout_constraintStart_toStartOf="@+id/btnVerbinden"
+        app:layout_constraintTop_toBottomOf="@+id/btnVerbinden" />
 
 </android.support.constraint.ConstraintLayout>

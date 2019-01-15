@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
          * 71	changeDirectionLeft15
          */
         Random rnd = new Random();
-        int random = rnd.nextInt((72 - 60) + 60);
+        int random = rnd.nextInt((72 - 60) + 1);
         conn.sendMessage(random);
     }
 
