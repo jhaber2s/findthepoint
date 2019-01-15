@@ -9,9 +9,11 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="19dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="153dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="8dp"
         android:text="verbindung ?"
         app:layout_constraintBottom_toTopOf="@+id/btnVerbinden"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,12 +22,11 @@
 
     <Button
         android:id="@+id/btnVerbinden"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="368dp"
+        android:layout_height="141dp"
 
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:text="@string/verbinden"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,29 +35,25 @@
 
     <Button
         android:id="@+id/find"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="368dp"
+        android:layout_height="142dp"
         android:onClick="findPoint"
         android:text="Find"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="368dp"
+        android:layout_height="141dp"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:onClick="showSensors"
         android:text="Sensoren"
         app:layout_constraintBottom_toTopOf="@+id/find"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnVerbinden"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnVerbinden" />
 

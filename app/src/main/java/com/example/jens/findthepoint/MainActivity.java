@@ -20,10 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         final Button connbtn = findViewById(R.id.btnVerbinden);
-        final Button farbe = findViewById(R.id.btnFarbeanzeigen);
         final TextView anzeige = findViewById(R.id.textView);
-        final Button algostartbtn = findViewById(R.id.btnalgostart);
-        
 
         connbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 
 
     public void findPoint(View view) {
