@@ -84,8 +84,9 @@ public class MainActivity extends AppCompatActivity {
         int status;
 
         public void run() {
-            conn.sendMessage(100);
+
             while (true) {
+                conn.sendMessage(100);
                 status = conn.readMessage();
                 switch (status) {
                     /** found green point and finished **/
@@ -124,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
          * 71	changeDirectionLeft15
          */
         Random rnd = new Random();
-        int random = rnd.nextInt((72 - 60) + 1);
+        int random = rnd.nextInt((72 - 60) )+60;
         conn.sendMessage(random);
     }
 
