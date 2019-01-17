@@ -14,7 +14,7 @@
         android:layout_marginTop="37dp"
         android:layout_marginEnd="152dp"
         android:layout_marginBottom="8dp"
-        android:text="verbindung ?"
+        android:text="Nicht Verbindung ?"
         app:layout_constraintBottom_toTopOf="@+id/btnVerbinden"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         final Button connbtn = findViewById(R.id.btnVerbinden);
         final TextView anzeige = findViewById(R.id.textView);
 
@@ -26,14 +25,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (conn.connect()) {
-
                     anzeige.setText("Verbunden");
+                }
+                else{
+                    anzeige.setText("Nicht Verbunden");
                 }
             }
         });
     }
-
-
 
     public void findPoint(View view) {
         Thread FindingThread = new Thread(finding);
@@ -65,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
     };
 
     public void finished() {
-        Intent found = new Intent(this, FindActivity.class);
-        startActivity(found);
+        Intent i = new Intent(this, FindActivity.class);
+        startActivity(i);
     }
 
     public void changeDirection() {
