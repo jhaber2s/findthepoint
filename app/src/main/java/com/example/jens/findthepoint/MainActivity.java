@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         final Button connbtn = findViewById(R.id.btnVerbinden);
         final TextView anzeige = findViewById(R.id.textView);
 
+
+
         connbtn.setOnClickListener(new View.OnClickListener() {
             @Override
            public void onClick(View v) {
