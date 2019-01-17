@@ -17,35 +17,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-/*
-        final Button connbtn = findViewById(R.id.btnVerbinden);
-        final TextView anzeige = findViewById(R.id.textView);
 
-
-
-        connbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-           public void onClick(View v) {
-                if (conn.connect()) {
-                    anzeige.setText("Verbunden");
-                }
-                else{
-                    anzeige.setText("Fehler bei der Verbindung");
-                }
-            }
-        });
-*/
     }
+
     public void btnConnect (View v){
-
         TextView anzeige = findViewById(R.id.textView);
-
-        if (conn.connect()) {
-            anzeige.setText("Verbunden");
+        if (conn.isconn) {
+            anzeige.setText("Verbunden!!!!");
         }
         else{
-            anzeige.setText("Fehler bei der Verbindung");
+            if (conn.connect()) {
+                anzeige.setText("Verbunden");
+            }
+            else{
+                anzeige.setText("Fehler bei der Verbindung");
+            }
         }
+
+
+
+
+
     }
 
     public void findPoint(View view) {

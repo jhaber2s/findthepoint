@@ -23,6 +23,7 @@ public class Connector {
     private BluetoothSocket bluetoothSocket;
     private String address;
     private OutputStream output;
+    public boolean isconn = false;
 
     public Connector(String address) {
         this.address = address;
@@ -53,21 +54,17 @@ public class Connector {
 
     public boolean connect() {
 
-        boolean connected;
         BluetoothDevice nxt = this.bluetoothAdapter.getRemoteDevice(this.address);
 
         try {
             this.bluetoothSocket = nxt.createRfcommSocketToServiceRecord(UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"));
             this.bluetoothSocket.connect();
-            connected = true;
+            isconn = true;
 
         } catch (IOException e) {
-            connected = false;
-
+            isconn = false;
         }
-
-        return connected;
-
+        return isconn;
     }
 
     public Integer readMessage() {
