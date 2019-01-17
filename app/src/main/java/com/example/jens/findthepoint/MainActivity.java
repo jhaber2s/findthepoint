@@ -17,21 +17,33 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+/*
         final Button connbtn = findViewById(R.id.btnVerbinden);
         final TextView anzeige = findViewById(R.id.textView);
 
         connbtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+           public void onClick(View v) {
                 if (conn.connect()) {
                     anzeige.setText("Verbunden");
                 }
                 else{
-                    anzeige.setText("Nicht Verbunden");
+                    anzeige.setText("Fehler bei der Verbindung");
                 }
             }
         });
+*/
+    }
+    public void btnConnect (View v){
+
+        TextView anzeige = findViewById(R.id.textView);
+
+        if (conn.connect()) {
+            anzeige.setText("Verbunden");
+        }
+        else{
+            anzeige.setText("Fehler bei der Verbindung");
+        }
     }
 
     public void findPoint(View view) {
@@ -89,8 +101,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showSensors(View view) {
-        Intent Sensoren = new Intent(this,ShowSensors.class);
-        startActivity(Sensoren);
+        Intent i = new Intent(this,ShowSensors.class);
+        startActivity(i);
     }
 }
 
