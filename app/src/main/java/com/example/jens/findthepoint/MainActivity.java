@@ -47,15 +47,17 @@ public class MainActivity extends AppCompatActivity {
 
     Runnable finding = new Runnable() {
         int status;
+        boolean found = false;
 
         public void run() {
 
-            while (true) {
+            while (!found) {
                 conn.sendMessage(100);
                 status = conn.readMessage();
                 switch (status) {
                     /** found green point and finished **/
                     case 1:
+                        found = true;
                         finished();
                         break;
                     /** found red line and change direction **/
@@ -65,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
                     default:
                         break;
                 }
+
+
             }
         }
     };
